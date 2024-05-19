@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: test-namespace-pod
+  annotations:
+    description: Making this pod so I can deploy this on dev Namespace
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+     

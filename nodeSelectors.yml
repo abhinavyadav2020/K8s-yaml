@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: node-selectors
+  annotations:
+    description: Create a pod with a node selector
+  labels:
+    env: pods
+    feature: nodeselector
+    mood: happy
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["bin/bash", "-c", "while true; do echo node-selectors; sleep 5; done"]
+      env:
+       - name: feature
+         value: node-selectors
+  nodeSelector:
+    size: large
+  restartPolicy: Always

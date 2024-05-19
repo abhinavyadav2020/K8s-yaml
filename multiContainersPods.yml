@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: multi-containers
+  annotations:
+    description: Creating a multi container pods
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["bin/bash", "-c", "while true; do echo Hello yadav; done"]
+    - name: c01
+      image: ubuntu 
+      command: ["bin/bash", "-c", "while true; do echo Hello yadav; done"]
+  restartPolicy: Always 

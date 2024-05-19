@@ -1,0 +1,22 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: labels
+  annotations:
+    description: Creating a pod with labels and then filter our with selectors
+  labels:
+    env: development
+    class: pods
+    add: labels
+    next: selectors
+    for: labeling-and-filtering
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["bin/bash","-c","while true; do echo labels and selectors; sleep 5; done"]
+      env:
+       - name: topic
+         value: Labels
+       - name: NEXT
+         value: Selectors
